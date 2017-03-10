@@ -154,33 +154,26 @@
 
               <script id="avatar-template" type="text/html">
                 <a-entity class="avatar">
-                  <a-sphere class="head"
-                    opacity="0"
-                  ></a-sphere>
-                  <a-entity class="face"
-                    position="0 0.05 0"  >
-                    <a-sphere class="eye"
-                      material="shader:flat;color:#FFFFFF"
-                      position="0.12 0.1 -0.35"
-                      scale="0.05 0.05 0.05"
-                    >
-                      <a-sphere class="pupil"
-                        color="#000"
-                        position="0 0 -1"
-                        scale="0.02 0.02 0.02"
+                      <a-sphere class="head"
+                        opacity="0"
                       ></a-sphere>
-                    </a-sphere>
-                    <a-sphere class="eye"
-                      material="shader:flat;color:#FFFFFF"
-                      position="-0.12 0.1 -0.35"
-                      scale="0.05 0.05 0.05 "
-                    >
-                      <a-sphere class="pupil"
-                        color="#000"
-                        position="0 0 -1"
-                        scale="0.02 0.02 0.02"
-                      ></a-sphere>
-                    </a-sphere>
+                            <a-entity class="face"
+                              position="0 0.05 0"  >
+                                                <a-sphere class="eye"
+                                                  material="shader:flat;color:#FFFFFF"
+                                                  position="0.12 0.1 -0.35"
+                                                  scale="0.05 0.05 0.05"
+                                                >
+
+                                                </a-sphere>
+                                                <a-sphere class="eye"
+                                                  material="shader:flat;color:#FFFFFF"
+                                                  position="-0.12 0.1 -0.35"
+                                                  scale="0.05 0.05 0.05 "
+                                                >
+
+                              </a-sphere>
+<a-animation attribute="position" from="0 0 0" to="0 -.1 0" dur="1000" repeat="indefinate" direction="alternate" begin="0"></a-animation>
                   </a-entity>
                 </a-entity>
               </script>
@@ -272,6 +265,7 @@
                               <a-animation begin="click" easing="ease-in" attribute="scale"  fill="forwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
                               <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500" repeat="1"></a-animation>
                     </a-entity>
+
 </a-entity>
 
 
@@ -372,14 +366,7 @@
 
 
 
-<script>
-          var elms = [];
-          var elms = document.getElementsByClassName("waypoints");
-          for (var b = 0; b < elms.length; b++) {
-            elms[b].setAttribute('opacity','0');
-            elms[b].setAttribute('transparent','true');
-             };
-</script>
+
 
 <!-- Ground Plane -->
   <a-plane id="waterplane" rotation="-90 0 0" position="0 -4 0" width="400" height="400" segmentsHeight="30" segmentsWidth="30" color="#7BC8A4" material="shader:standard;sphericalEnvMap:#sky;metalness:.95;displacementMap:#disp"></a-plane>
@@ -733,7 +720,6 @@ document.querySelector('#boop').addEventListener('mouseleave', function () {
 
 var list2 = document.querySelectorAll(".waypoints");
 for (var w = 0; w < list2.length; w++) {
-      list2[w].setAttribute('material','color:#0000FF');
       list2[w].setAttribute('transparent','true');
       list2[w].setAttribute('opacity','0');
       list2[w].addEventListener('click', function (evt) {
