@@ -46,7 +46,9 @@
 
                         // Get position around a circle
                         var position = randomPointOnCircle(3, angleRad);
-                        var positionStr = position.x + ' 1.3 ' + position.y;
+                        position.x = position.x - 105;
+                        position.z = position.z + 26.67;
+                        var positionStr = position.x + ' 2 ' + position.y;
 
                         // Get rotation towards center of circle
                         var angleDeg = angleRad * 180 / Math.PI;
@@ -163,16 +165,16 @@
                                                   position="0.12 0.1 -0.35"
                                                   scale="0.05 0.05 0.05"
                                                 >
-
+<a-animation attribute="position" from=".12 0.1 -.35" to=".12 0 -.35" dur="1000" repeat="indefinate" direction="alternate" begin="0"></a-animation>
                                                 </a-sphere>
                                                 <a-sphere class="eye"
                                                   material="shader:flat;color:#FFFFFF"
                                                   position="-0.12 0.1 -0.35"
                                                   scale="0.05 0.05 0.05 "
                                                 >
-
+<a-animation attribute="position" from="-.12 0.1 -.35" to="-.12 0 -.35" dur="1000" repeat="indefinate" direction="alternate" begin="20"></a-animation>
                               </a-sphere>
-<a-animation attribute="position" from="0 0 0" to="0 -.1 0" dur="1000" repeat="indefinate" direction="alternate" begin="0"></a-animation>
+
                   </a-entity>
                 </a-entity>
               </script>
@@ -192,7 +194,10 @@
                                   <a-asset-item id="walkway2-obj" src="assets/models/walkway2.obj"></a-asset-item>
                                   <a-asset-item id="pedestal-obj" src="assets/models/pedestal.obj"></a-asset-item>
                                   <a-asset-item id="shape01-obj" src="assets/models/shape01.obj"></a-asset-item>
-                                  <a-asset-item id="courtyardElements-obj" src="assets/models/elements.obj"></a-asset-item>
+                                  <a-asset-item id="courtyardBuildings-obj" src="assets/models/courtyardBuildings.obj"></a-asset-item>
+                                  <a-asset-item id="courtyardElementsFloor-obj" src="assets/models/courtyardElementsFloor.obj"></a-asset-item>
+                                  <a-asset-item id="centralTower-obj" src="assets/models/centralTower.obj"></a-asset-item>
+                                  <a-asset-item id="statues-obj" src="assets/models/courtyardStatues.obj"></a-asset-item>
 
 
                     <!--Ceiling-->
@@ -280,7 +285,10 @@
             <a-entity obj-model="obj: #walkway2-obj" mixin="mtl_ancient2" checkpoint position="0 0 0"></a-entity>
             <a-entity obj-model="obj: #walkway-obj" mixin="mtl_ancient2" checkpoint position="0 0 0"></a-entity>
             <a-entity obj-model="obj: #courtyard-obj" mixin="ancient_Fractal" checkpoint position="0 0 0"></a-entity>
-            <a-entity obj-model="obj: #towers-obj" mixin="ancient_Fractal" checkpoint position="0 0 0"></a-entity>
+            <a-entity obj-model="obj: #courtyardBuildings-obj" mixin="mtl_ancient2" checkpoint position="0 0 0"></a-entity>
+            <a-entity obj-model="obj: #courtyardElementsFloor-obj" mixin="mtl_ancient2" checkpoint position="0 0 0"></a-entity>
+            <a-entity obj-model="obj: #centralTower-obj" mixin="mtl_ancient2" checkpoint position="0 0 0"></a-entity>
+            <a-entity obj-model="obj: #statues-obj" mixin="mtl_ancient2" checkpoint position="0 0 0"></a-entity>
   <!-- Ceiling -->
             <a-entity obj-model="obj: #ceiling-obj" checkpoint position="0 0 0" material="normalMap:#geometric"></a-entity>
 
